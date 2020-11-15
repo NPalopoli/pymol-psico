@@ -255,7 +255,8 @@ SEE ALSO
     val_range = int(last - first + 1)
     if val_range < 2:
         print(' Error: no spectrum possible, need more than 1 state')
-        raise CmdException
+        return  # NPALOPOLI - skips exception
+#        raise CmdException
 
     for i in range(val_range):
         p = float(i) / (val_range - 1) * (len(colvec) - 1)
